@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Parfüm Sipariş Formu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src='main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</head>
+<body onload="urunAdediDoldur();urunTaksidiDoldur();">
+    <h3>Parfüm Sipariş Formu</h3>
+    <form action="#" id="urunForm">
+        <label for="urunTipi">Ürün Tipi</label>
+        <span>
+            <input type="radio" name="urunTipi" id="erkekUrunleri" value="E" onchange="urunleriGetir();">
+            <label for="erkekUrunleri" for="exampleRadios1">Erkek Parfümleri</label>
+            <input type="radio" name="urunTipi" id="kadinUrunleri" value="K" onchange="urunleriGetir();">
+            <label for="kadinUrunleri" for="exampleRadios1">Kadın Parfümleri</label>
+        </span>
+        <input type="button" value="Ürün Listesini Getir" id="btnGetir" class="btn btn-outline-primary">
+        <label for="urunListesi">Ürün Seçimi</label>       
+        <select name="" id="urunListesi" size="4" class="form-select">
+            <!--Boş Liste-->
+            
+        </select>
+
+        <label for="urunAdedi">Ürün Adeti</label> 
+        <select class="form-select" id="urunAdedi">
+            <!--Boş Liste-->
+        </select>
+
+        <label for="urunTaksidi">Taksit Sayısı</label>
+        <select class="form-select" id="urunTaksidi">
+            <!--Boş Liste-->
+        </select>
+
+        <input type="button" class="btn btn-outline-primary" value="Ara Toplamı Hesapla" id="btnAraToplam" onclick="Hesapla();">
+
+        <label for="txtAraToplam">Toplam Tutar</label>
+        <input type="text" id="txtAraToplam" disabled>
+
+        <label for="txtKargo">Kargo Ücreti</label>
+        <input type="text" id="txtKargo" disabled>
+    </form><br>
+    <h5 class="alert alert-primary" role="alert" id="sonuc"></h5>
+</body>
+</html>
